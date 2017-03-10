@@ -9,7 +9,7 @@ class NavBarHeader extends Component {
 			return [
 				<NavItem key={3} href="/signout">Sign Out</NavItem>,
 				<NavDropdown key={4} title="Navigate" id="basic-nav-dropdown">
-			        <MenuItem key={4.1} href="/lists">All Shopping Lists</MenuItem>
+			        <MenuItem key={4.1} href="/">All Shopping Lists</MenuItem>
 			        {/*<MenuItem key={4.2}>Another action</MenuItem>
 			        <MenuItem key={4.3}>Something else here</MenuItem>
 			        <MenuItem divider />
@@ -29,7 +29,7 @@ class NavBarHeader extends Component {
 			<Navbar>
 			    <Navbar.Header>
 			        <Navbar.Brand>
-			            <a href="/lists">Shopping List</a>
+			            <a href="/">Shopping List</a>
 			        </Navbar.Brand>
 			    </Navbar.Header>
 			    <Nav>

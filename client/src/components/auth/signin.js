@@ -26,7 +26,7 @@ class Signin extends Component {
 		// const password = this.props.fields.password;
 
 		return (
-			<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))} className="col-md-4">
+			<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))} className="col-md-6 col-md-offset-3">
 				<fieldset className="form-group">
 					<label>Email: </label>
 					<input {...email} className="form-control" />

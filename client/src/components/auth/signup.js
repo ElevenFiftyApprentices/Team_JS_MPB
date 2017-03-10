@@ -22,7 +22,7 @@ class Signup extends Component {
 	render() {
 		const { handleSubmit, fields: { email, password, passwordConfirm }} = this.props;
 		return (
-			<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+			<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))} className="col-md-6 col-md-offset-3">
 				<fieldset className="form-group">
 					<label>Email</label>
 					<input className="form-control" {...email} />
