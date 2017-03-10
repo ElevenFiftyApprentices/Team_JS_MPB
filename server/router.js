@@ -1,5 +1,5 @@
 var Auth = require("./controllers/auth");
-var BucketList = require("./controllers/bucketlistcontroller");
+var ShoppingList = require("./controllers/shoppinglistcontroller");
 
 var passportService = require("./services/passport");
 var passport = require("passport");
@@ -19,12 +19,12 @@ module.exports = function(app) {
 
 	app.post("/signin", requireSignin, Auth.signin);
 
-	app.post("/newitem", requireAuth, BucketList.addBucketList);
+	app.post("/newitem", requireAuth, ShoppingList.addShoppingList);
 
-	app.get("/items", requireAuth, BucketList.fetchBucketLists);
+	app.get("/items", requireAuth, ShoppingList.fetchShoppingLists);
 
-	app.get("/items/:id", requireAuth, BucketList.fetchBucketList);
+	app.get("/items/:id", requireAuth, ShoppingList.fetchShoppingList);
 
-	app.delete("/items/:id", requireAuth, BucketList.deleteBucketList);
+	app.delete("/items/:id", requireAuth, ShoppingList.deleteShoppingList);
 
 };

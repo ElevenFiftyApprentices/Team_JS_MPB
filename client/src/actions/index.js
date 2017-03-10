@@ -1,6 +1,6 @@
 import axios from "axios";
 import { browserHistory } from "react-router";
-import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, CREATE_POSTS, FETCH_POSTS, FETCH_POST, DELETE_POST } from "./types";
+import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, CREATE_POST, FETCH_POSTS, FETCH_POST, DELETE_POST } from "./types";
 import authReducer from "../reducers/auth_reducer";
 
 const ROOT_URL = "http://localhost:3000";
@@ -14,7 +14,7 @@ export function createPost(props) {
 		axios.post(`${ROOT_URL}/newitem`, { props }, config )
 		.then(request => {
 			dispatch({
-				type: CREATE_POSTS,
+				type: CREATE_POST,
 				payload: request
 			});
 			browserHistory.push("/items");

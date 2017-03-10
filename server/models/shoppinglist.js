@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var BucketListSchema = new Schema({
+var ShoppingListSchema = new Schema({
 	title: {
 		type: String,
 		default: ""
@@ -24,4 +24,4 @@ var BucketListSchema = new Schema({
 	}
 });
 
-module.exports = mongoose.model("BucketList", BucketListSchema);
+module.exports = mongoose.model("ShoppingList", ShoppingListSchema);

@@ -8,12 +8,12 @@ class NavBarHeader extends Component {
 		if(this.props.authenticated) {
 			return [
 				<NavItem key={3} href="/signout">Sign Out</NavItem>,
-				<NavDropdown key={4} title="Cool Stuff" id="basic-nav-dropdown">
-			        <MenuItem key={4.1}>Action</MenuItem>
-			        <MenuItem key={4.2}>Another action</MenuItem>
+				<NavDropdown key={4} title="Navigate" id="basic-nav-dropdown">
+			        <MenuItem key={4.1} href="/lists">All Shopping Lists</MenuItem>
+			        {/*<MenuItem key={4.2}>Another action</MenuItem>
 			        <MenuItem key={4.3}>Something else here</MenuItem>
 			        <MenuItem divider />
-			        <MenuItem key={4.4}>Separated link</MenuItem>
+			        <MenuItem key={4.4}>Separated link</MenuItem>*/}
 		        </NavDropdown>
 			];
 		} else {
@@ -29,7 +29,7 @@ class NavBarHeader extends Component {
 			<Navbar>
 			    <Navbar.Header>
 			        <Navbar.Brand>
-			            <a href="#">Bucket List</a>
+			            <a href="/lists">Shopping List</a>
 			        </Navbar.Brand>
 			    </Navbar.Header>
 			    <Nav>

@@ -1,6 +1,6 @@
-var BucketList = require("../models/bucketlist.js");
+var ShoppingList = require("../models/shoppinglist.js");
 
-exports.addBucketList = function(req, res, next) {
+exports.addShoppingList = function(req, res, next) {
 	// for postman use
 	// var title = req.body.title;
 	// var category = req.body.category;
@@ -13,7 +13,7 @@ exports.addBucketList = function(req, res, next) {
 	var content = req.body.props.content;
 	var specificUser = req.user._id;
 
-	var bucketList = new BucketList({
+	var shoppingList = new ShoppingList({
 		title: title,
 		category: category,
 		url: url,
@@ -21,17 +21,17 @@ exports.addBucketList = function(req, res, next) {
 		specificUser: specificUser
 	});
 
-	bucketList.save(function(err){
+	shoppingList.save(function(err){
 		if(err) {
 			return next(err);
 		}
-		res.json(bucketList);
+		res.json(shoppingList);
 	});
 }
 
-exports.fetchBucketLists = function(req, res) {
+exports.fetchShoppingLists = function(req, res) {
 	var specificUser = req.user._id;
-	BucketList.find({specificUser: specificUser})
+	ShoppingList.find({specificUser: specificUser})
 	.then(
 		function fetchSuccess(data) {
 			res.json(data);
@@ -42,9 +42,9 @@ exports.fetchBucketLists = function(req, res) {
 	);
 }
 
-exports.fetchBucketList = function(req, res) {
-	var specificBucketList = req.params.id;
-	BucketList.findOne({_id: specificBucketList})
+exports.fetchShoppingList = function(req, res) {
+	var specificShoppingList = req.params.id;
+	ShoppingList.findOne({_id: specificShoppingList})
 	.then(
 		function fetchSuccess(data) {
 			res.json(data);
@@ -55,9 +55,9 @@ exports.fetchBucketList = function(req, res) {
 	);
 }
 
-exports.deleteBucketList = function(req, res) {
-	var specificBucketList = req.params.id;
-	BucketList.remove({_id: specificBucketList})
+exports.deleteShoppingList = function(req, res) {
+	var specificShoppingList = req.params.id;
+	ShoppingList.remove({_id: specificShoppingList})
 	.then(
 		function deleteSuccess(data) {
 			res.json(data);
